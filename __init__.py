@@ -31,5 +31,6 @@ def demangle_swift(bv):
 	assert len(swift_variables) == len(results)
 	for (variable, name) in zip(swift_variables, results):
 		variable.name = name
+	binaryninja.log_info(f"Swift demangling complete! Updated {len(swift_functions)} functions and {len(swift_variables)} variables.")
 
 binaryninja.PluginCommand.register("Swift Demangler", "Demangles Swift", demangle_swift)
