@@ -25,7 +25,7 @@
 		"Darwin": "Install the Command Line Tools or Xcode.",
 		"Linux": "Install the Swift toolchain and make it available on PATH."
 	},
-	"version": "1.0",
+	"version": "1.1",
 	"author": "Saagar Jha",
 	"minimumbinaryninjaversion": 3164
 }
