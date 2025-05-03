@@ -7,7 +7,7 @@ def run_demanger(symbols):
 def demangle_swift(bv):
 	swift_functions = []
 	for function in bv.functions:
-		if function.name.startswith("_$s"):
+		if function.name is not None:
 			swift_functions.append(function)
 	results = run_demanger(map(lambda f: f.name, swift_functions))
 	assert len(swift_functions) == len(results)
@@ -23,7 +23,7 @@ def demangle_swift(bv):
 	for variable in variables:
 		try:
 			variable = variables[variable]
-			if variable.name.startswith("_$s"):
+			if variable.name is not None:
 				swift_variables.append(variable)
 		except:
 			pass
