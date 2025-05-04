@@ -7,8 +7,11 @@ def run_demanger(symbols):
 def demangle_swift(bv):
 	swift_functions = []
 	for function in bv.functions:
-		if function.name is not None:
-			swift_functions.append(function)
+		try:
+			if function.name is not None:
+				swift_functions.append(function)
+		except:
+			pass
 	results = run_demanger(map(lambda f: f.name, swift_functions))
 	assert len(swift_functions) == len(results)
 	for (function, name) in zip(swift_functions, results):
