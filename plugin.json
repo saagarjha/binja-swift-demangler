@@ -2,10 +2,6 @@
 	"pluginmetadataversion": 2,
 	"name": "Swift Demangler",
 	"type": [
-		"core",
-		"ui",
-		"architecture",
-		"binaryview",
 		"helper"
 	],
 	"api": [
