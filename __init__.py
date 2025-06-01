@@ -25,11 +25,12 @@ def demangle_swift(bv):
 	results = run_demanger(map(lambda f: f.name, swift_functions))
 	assert len(swift_functions) == len(results)
 	for function, name in zip(swift_functions, results):
-		if function.comment:
-			function.comment = f"{function.comment} ({function.name})"
-		else:
-			function.comment = function.name
-		function.name = name
+		if function.name != name:
+			if function.comment:
+				function.comment = f"{function.comment} ({function.name})"
+			else:
+				function.comment = function.name
+			function.name = name
 
 	variables = bv.data_vars
 	swift_variables = []
